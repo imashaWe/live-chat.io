@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const {expressjwt: jwt} = require("express-jwt");
 
@@ -11,6 +12,9 @@ const port = process.env.PORT || 4000;
 // connect to mongodb
 mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
+
+// set up CORS middleware
+app.use(cors());
 
 // set up jwt middleware
 app.use(
@@ -24,16 +28,21 @@ app.use(
 app.use(bodyParser.json());
 
 // initialize routes
-app.use('/auth', require('./src/routes/auth'));
-app.use('/', require('./src/routes/api'));
+app.use('/auth', require('./src/routes/auth.routes'));
 
-// error handling middleware
-app.use((e, req, res, next) => {
-    res.status(422).send({
-        status: false,
-        message: e.message
-    });
-})
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+    res.status(404).json({
+        message: "No such route exists"
+    })
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500).json({
+        message: "Internal server error"
+    })
+});
 
 app.listen(port, () => {
     console.log(`server listening for requests at port:${port}`);
