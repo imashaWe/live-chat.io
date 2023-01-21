@@ -14,6 +14,9 @@ mongoose.Promise = global.Promise;
 // set up body-parser middleware
 app.use(bodyParser.json());
 
+// initialize routes
+app.use('/auth', require('./src/routes/auth'));
+
 // error handling middleware
 app.use((e, req, res, next) => {
     res.status(422).send({
