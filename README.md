@@ -30,22 +30,40 @@ Live chat application.
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone ithub.com/imashaWe/live-chat.io
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd live-chat.io
 ```
 
-Install dependencies
+Install dependencies for backend
 
+```bash
+  cd backend
+```
 ```bash
   npm install
 ```
 
-Start the server
+Start the backend server
+
+```bash
+  npm run start
+```
+
+Install dependencies for frontend
+
+```bash
+  cd frontend
+```
+```bash
+  npm install
+```
+
+Start the frontend
 
 ```bash
   npm run start
@@ -56,9 +74,9 @@ Start the server
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`API_KEY`
+`ACCESS_TOKEN_SECRET`
 
-`ANOTHER_API_KEY`
+`MONGO_URL`
 
 
 ## Deployment
@@ -66,6 +84,6 @@ To run this project, you will need to add the following environment variables to
 To deploy this project run
 
 ```bash
-  npm run deploy
+  docker-compose up
 ```
 
