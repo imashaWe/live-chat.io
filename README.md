@@ -30,7 +30,7 @@ A chat application using WebSockets and Node.js would allow users to communicate
 Clone the project
 
 ```bash
-  git clone ithub.com/imashaWe/live-chat.io
+  git clone https://github.com/imashaWe/live-chat.io
 ```
 
 Go to the project directory
