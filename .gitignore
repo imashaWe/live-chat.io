@@ -6,3 +6,6 @@
 
 # VSCode related
 *.vscode/
+
+# env files
+*.env
