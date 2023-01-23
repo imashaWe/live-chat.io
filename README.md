@@ -1,6 +1,6 @@
 
 # live-chat.io
-Live chat application. 
+A chat application using WebSockets and Node.js would allow users to communicate in real-time through a web-based interface. The application would use Node.js as the server-side technology, and WebSockets to handle the real-time communication between the server and clients. Users would connect to the application via their web browser, and would be able to send and receive messages, as well as potentially see a list of other connected users. The application could be built with a variety of front-end libraries and frameworks, such as React or AngularJS, to create a user-friendly interface.
 
 
 ## Tech Stack
