@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const jwtWeb = require("./src/middlewares/jwt-web-api");
-const webSocketServer = require("./web-socket-server");
+const webSocketServer = require("./src/socket-server");
 // set up express app
 const app = express();
 const port = process.env.PORT || 4000;
