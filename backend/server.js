@@ -12,7 +12,7 @@ const port = process.env.PORT || 4000;
 // connect to mongodb
 mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
-
+console.log("Connected to MongoDB");
 // set up CORS middleware
 app.use(cors());
 

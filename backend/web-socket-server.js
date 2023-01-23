@@ -4,7 +4,10 @@ const webSocketServer = (server) => {
     const io = socket(server);
     io.use(jwt);
     io.on('connection', (socket) => {
-
+      //  console.log(socket);
+        socket.onAny((event, ...args) => {
+            console.log(event, args);
+        });
     });
 }
 

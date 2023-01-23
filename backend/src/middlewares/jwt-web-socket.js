@@ -6,8 +6,8 @@ const jwtWebSocket = socketJwtAuth.authenticate({
     algorithm: 'HS256'        // optional, default to be HS256
 }, function (payload, done) {
     // done is a callback, you can use it as follows
-    console.log(payload);
-    User.findOne({id: payload.uid}, function (err, user) {
+    User.findById(payload.uid, function (err, user) {
+        console.log(user)
         if (err) {
             // return error
             return done(err);
