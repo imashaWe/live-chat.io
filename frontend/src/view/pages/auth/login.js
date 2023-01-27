@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
@@ -10,10 +9,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Copyright from '../../components/copyright';
 import {FormContainer, TextFieldElement} from "react-hook-form-mui";
-import FormSubmitButton from "../../components/form-submit-button";
-import FormMessageLabel from "../../components/form-message-label";
 import {useDispatch} from "react-redux";
-import {setFormFailure, setFormSubmitting} from "../../../actions/form-actions";
+import {FormMessageLabel, FormSubmitButton} from "../../components/form-components";
 
 export default function Login() {
 
